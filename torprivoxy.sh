@@ -1,11 +1,11 @@
 #!/bin/bash
-
+#need sudo privileges with current user
 #need tor and privoxy installed on linux machine
 #run this script like sh multitor.sh 10(replacing the number with as many tor instances as you want)
 
 #removes old data folder and kills tor processes
 sudo rm -rf data privoxy
-killall tor privoxy
+sudo killall tor privoxy
 set -e
 
 base_socks_port=9050
