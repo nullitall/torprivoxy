@@ -1,5 +1,5 @@
 #!/bin/bash
-
+#need tor and privoxy installed on linux machine
 #run this script like sh multitor.sh 10(replacing the number with as many tor instances as you want)
 
 #removes old data folder and kills tor processes
