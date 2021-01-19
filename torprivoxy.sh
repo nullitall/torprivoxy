@@ -1,9 +1,10 @@
 #!/bin/bash
+
 #need tor and privoxy installed on linux machine
 #run this script like sh multitor.sh 10(replacing the number with as many tor instances as you want)
 
 #removes old data folder and kills tor processes
-rm -rf data privoxy
+sudo rm -rf data privoxy
 killall tor privoxy
 set -e
 
@@ -39,5 +40,6 @@ do
         #runs tor instances based off sh multitor.sh 5 
         tor --RunAsDaemon 1 --CookieAuthentication 0 --PidFile /home/USERNAME/data/tor$i.pid --SocksPort $ip_addr:$socks_port --DataDirectory /home/USERNAME/data/tor$i
 	      #runs privoxy instances based on how many tor servers
-        privoxy --pidfile privoxy$i.pid privoxy/privoxy$i/config
+        sudo privoxy --pidfile privoxy$i.pid privoxy/privoxy$i/config
+	      
 done
