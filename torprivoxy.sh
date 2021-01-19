@@ -38,7 +38,7 @@ do
                 echo "forward			127.*.*.*/	.">> privoxy/privoxy$i/config 
         fi
         #runs tor instances based off sh multitor.sh 5 
-        tor --RunAsDaemon 1 --CookieAuthentication 0 --PidFile /home/USERNAME/data/tor$i.pid --SocksPort $ip_addr:$socks_port --DataDirectory /home/USERNAME/data/tor$i
+        tor --RunAsDaemon 1 --CookieAuthentication 0 --PidFile /home/USERNAME/data/tor$i.pid --SocksPort $socks_port --DataDirectory /home/USERNAME/data/tor$i
 	      #runs privoxy instances based on how many tor servers
         sudo privoxy --pidfile privoxy$i.pid privoxy/privoxy$i/config
 	      
